@@ -19,7 +19,7 @@
     ),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(180deg, #d3d3d3 0, #e7e7e7 0.01%, #1a1a1a 100%);
-  background-position: cover;
+  background-size: cover;
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -95,6 +95,34 @@
   object-position: center;
 }
 
+.card-image-blur {
+  filter: blur(3px);
+}
+
+.card-image-brightness {
+  filter: brightness(45%);
+}
+
+.card-image-plural {
+  filter: blur(5px) grayscale(75%) sepia(50%);
+}
+
+.card-image-contrast {
+  filter: contrast(30%);
+}
+
+.card-image-hue-rotate {
+  filter: hue-rotate(270deg);
+}
+
+.card-image-invert {
+  filter: invert(45%);
+}
+
+.card-image-sepia {
+  filter: sepia(70%);
+}
+
 .card-label {
   position: absolute;
   top: 25px;
@@ -103,7 +131,6 @@
   color: var(--color-text);
   font-family: var(--second-font, fantasy);
   font-size: 14px;
-  text-transform: uppercase;
   text-shadow: 1px 1px var(--label-color, #fff);
   mix-blend-mode: hard-light;
 }
@@ -115,6 +142,10 @@
     text-stroke: 2px var(--label-color, #fff);
     -webkit-text-stroke: 1px var(--label-color, #fff);
   }
+}
+
+.card-label-uppercase {
+  text-transform: uppercase;
 }
 
 .card-text {
@@ -135,8 +166,8 @@
   justify-content: end;
   align-items: flex-end;
   gap: 7px;
-  /* padding-inline-end: 25px;
-  padding-block-end: 25px; */
+  padding-inline-end: 25px;
+  padding-block-end: 25px;
 }
 
 .card__icon-button {
@@ -148,8 +179,8 @@
   background-color: var(--bg-color, #fff);
   transition: border-color 0.3s ease;
   cursor: pointer;
-  inline-size: 39px;
-  block-size: 36px;
+  inline-size: 38px;
+  block-size: 38px;
 }
 
 .card__like-button {
@@ -166,4 +197,225 @@
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
+}
+
+.main-button-save {
+  display: flex;
+  justify-content: center;
+  padding-block-end: 10px;
+}
+
+.button-save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color, #fff);
+}
+
+.button {
+  position: relative;
+  border: 2px solid var(--color-border, #000);
+  overflow: hidden;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+.button:focus-visible {
+  box-shadow: 3px 3px 0 var(--color-shadow, #000);
+}
+
+.diskette-button {
+  inline-size: 335px;
+  block-size: 53px;
+}
+
+.dialog-save {
+  gap: 30px;
+  padding-inline: 30px;
+  padding-block: 30px;
+  inline-size: 353px;
+}
+
+.dialog-save[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.diskette-icon {
+  color: var(--color-diskette, #fff);
+}
+
+.dialog-save-popup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 150%;
+}
+
+.dialog-description {
+  color: var(--color-text, #000);
+  font-family: var(--second-font, fantasy);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  inline-size: 234px;
+}
+
+.button-dialog-text {
+  color: var(--text-button, #fff);
+  font-family: var(--second-font, fantasy);
+  font-size: 14px;
+  line-height: 90%;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+dialog::backdrop {
+  opacity: 0.75;
+  background-color: #000;
+}
+
+.dialog-save-button-popup {
+  width: 100%;
+  block-size: 38px;
+}
+
+.button__text,
+.diskette-icon,
+.button-dialog-text {
+  position: relative;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%);
+}
+
+.button:hover::before {
+  transform: translate(0%);
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--color-border, #000);
+}
+
+.like-icon .heart {
+  transition: fill 0.1s linear;
+  transform-origin: center center;
+}
+
+.like-icon .main-body {
+  fill: var(--color-default, #fff);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .core {
+  fill: var(--color-default, #fff);
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-hover, #000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--color-hover, #000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--color-animation, #ff0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--color-animation, #ff0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-animation, #ff0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-animation, #ff0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-animation, #ff0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .sparks {
+  opacity: 0;
+  fill: var(--color-animation, #ff0000);
+  animation: sparks 0.3s ease-in 0.3s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s ease-in 0.1s;
+}
+
+@media (width <= 375px) {
+  .content {
+    padding-block-end: 100px;
+  }
+
+  .header-element {
+    margin-block: 120px;
+  }
+
+  .card-title {
+    padding-block: 5px;
+    line-height: 1.3;
+  }
+
+  .diskette-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    inline-size: 306px;
+    block-size: 84px;
+  }
+
+  .diskette-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-label {
+    top: 20px;
+    right: 10px;
+  }
+
+  .card-text-description {
+    line-height: 117%;
+  }
+
+  .dialog-save {
+    padding-inline: 41px;
+    inline-size: 342px;
+  }
+
+  .dialog-diskette {
+    block-size: 46px;
+    inline-size: 46px;
+  }
 }
