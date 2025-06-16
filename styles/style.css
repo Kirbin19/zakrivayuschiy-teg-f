@@ -247,6 +247,7 @@
 
 .diskette-icon {
   color: var(--color-diskette, #fff);
+  mix-blend-mode: difference;
 }
 
 .dialog-save-popup {
