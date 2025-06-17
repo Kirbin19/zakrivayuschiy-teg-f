@@ -11,7 +11,7 @@
 */
 
 .page {
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, sans-serif), sans-serif;
   background-image: repeating-linear-gradient(
       90deg,
       #d3d3d3 0 2px,
@@ -47,7 +47,7 @@
 
 .title-element {
   color: var(--color-text, #000);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   text-decoration: none;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 
 .description-element {
   color: var(--color-text, #000);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
 }
@@ -129,7 +129,7 @@
   right: 25px;
   opacity: 50%;
   color: var(--color-text);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: 14px;
   text-shadow: 1px 1px var(--label-color, #fff);
   mix-blend-mode: hard-light;
@@ -193,10 +193,11 @@
 
 .button__text {
   color: var(--text-button, #fff);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
+
 }
 
 .main-button-save {
@@ -248,6 +249,7 @@
 .diskette-icon {
   color: var(--color-diskette, #fff);
   mix-blend-mode: difference;
+  margin-block-end: -3px;
 }
 
 .dialog-save-popup {
@@ -259,7 +261,7 @@
 
 .dialog-description {
   color: var(--color-text, #000);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -268,7 +270,7 @@
 
 .button-dialog-text {
   color: var(--text-button, #fff);
-  font-family: var(--second-font, fantasy);
+  font-family: var(--second-font, fantasy), fantasy;
   font-size: 14px;
   line-height: 90%;
   text-transform: uppercase;
@@ -372,9 +374,9 @@ dialog::backdrop {
   animation: scale 0.3s ease-in 0.1s;
 }
 
-@media (width <= 375px) {
-  .content {
-    padding-block-end: 100px;
+@media (width <= 376px) {
+  .main-button-save {
+    padding-block-end: 0px;
   }
 
   .header-element {
@@ -383,7 +385,7 @@ dialog::backdrop {
 
   .card-title {
     padding-block: 5px;
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
   .diskette-button {
