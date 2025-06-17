@@ -179,7 +179,6 @@
   background-color: var(--bg-color, #fff);
   transition: border-color 0.3s ease;
   cursor: pointer;
-  inline-size: 38px;
   block-size: 38px;
 }
 
